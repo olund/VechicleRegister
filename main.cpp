@@ -17,13 +17,11 @@ int main(int argc, char *argv[]) {
     w.show();
 
     MyVector<Boat> boatVector;
-    Boat x("a", "b", 1994, 3, 300, 200);
     Boat b("b", "b", 1994, 3, 300, 200);
     Boat c("c", "b", 1994, 3, 300, 200);
     Boat d("d", "b", 1994, 3, 300, 200);
     Boat e("e", "b", 1994, 3, 300, 200);
 
-    boatVector.addLast(x);
     boatVector.addLast(b);
     boatVector.addLast(c);
     boatVector.addLast(d);
