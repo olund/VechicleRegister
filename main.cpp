@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "vehicle.h"
+#include "boat.h"
 
 using namespace std;
 
@@ -14,9 +15,9 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    Vehicle *v = new Vehicle();
+    Vehicle *v = new Boat("make1", "model1", 1994, 5, 20, 100);
 
-    cout << v->getMake() << endl;
+    cout << v->toString() << endl;
 
     return a.exec();
 }
