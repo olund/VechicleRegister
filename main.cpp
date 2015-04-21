@@ -5,6 +5,7 @@
 #include <string>
 #include "vehicle.h"
 #include "boat.h"
+#include "myvector.h"
 
 using namespace std;
 
@@ -15,11 +16,22 @@ int main(int argc, char *argv[]) {
     MainWindow w;
     w.show();
 
-    Vehicle *v = new Boat("make1", "model1", 1994, 5, 20, 100);
+    MyVector<Boat> boatVector;
+    Boat x("a", "b", 1994, 3, 300, 200);
+    Boat b("b", "b", 1994, 3, 300, 200);
+    Boat c("c", "b", 1994, 3, 300, 200);
+    Boat d("d", "b", 1994, 3, 300, 200);
+    Boat e("e", "b", 1994, 3, 300, 200);
 
-    cout << v->toString() << endl;
+    boatVector.addLast(x);
+    boatVector.addLast(b);
+    boatVector.addLast(c);
+    boatVector.addLast(d);
+    boatVector.addLast(e);
 
-    delete v;
-
+    boatVector.print();
+/*    delete v;
+    delete vector;
+*/
     return a.exec();
 }
