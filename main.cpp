@@ -9,8 +9,8 @@
 using namespace std;
 
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
     Vehicle *v = new Boat("make1", "model1", 1994, 5, 20, 100);
 
     cout << v->toString() << endl;
+
+    delete v;
 
     return a.exec();
 }

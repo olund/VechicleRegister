@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     vehicle.cpp \
-    boat.cpp
+    boat.cpp \
+    motorcycle.cpp
 
 HEADERS  += mainwindow.h \
     vehicle.h \
-    boat.h
+    boat.h \
+    motorcycle.h
 
 FORMS    += mainwindow.ui
