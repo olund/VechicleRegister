@@ -15,6 +15,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_lineEdit_textChanged(const QString &theText);
+
 private:
     Ui::MainWindow *ui;
 };

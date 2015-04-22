@@ -36,10 +36,10 @@ int main(int argc, char *argv[]) {
     intVector.addLast(2);
     intVector.addLast(3);
 
-    MyVector<Vehicle> *vVector = new MyVector<Vehicle>();
+    MyVector<SailBoat> *vVector = new MyVector<SailBoat>();
 
     for (int i = 0; i < 10; i++) {
-        //vVector->addLast(SailBoat("a", "a", 1, 1, 1, 1, 1));
+        vVector->addLast(SailBoat("a", "a", 1, 1, 1, 1, 1));
         //vVector->addLast(new Boat(""));
     }
 
