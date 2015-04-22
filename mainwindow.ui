@@ -34,11 +34,24 @@
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>Click me!</string>
+        <string>Search</string>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>150</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open new window</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

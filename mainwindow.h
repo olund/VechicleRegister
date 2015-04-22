@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "addsomething.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,8 +19,11 @@ public:
 private slots:
     void on_lineEdit_textChanged(const QString &theText);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
+    AddSomething *addSomethingDialog;
 };
 
 #endif // MAINWINDOW_H
