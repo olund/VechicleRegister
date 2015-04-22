@@ -22,7 +22,8 @@ HEADERS  += mainwindow.h \
     vehicle.h \
     boat.h \
     motorcycle.h \
-    myvector.h
+    myvector.h \
+    reader.h
 
 FORMS    += mainwindow.ui
 

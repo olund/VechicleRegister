@@ -21,7 +21,19 @@ Vehicle::Vehicle(string make, string model, int yearMade, int nrOfPassgengers) {
     this->nrOfPassengers = nrOfPassgengers;
 }
 
-Vehicle::~Vehicle() { std::cout << "Vehicle destructor; " << std::endl; }
+Vehicle::Vehicle(const Vehicle &orig) {
+    this->make = orig.make;
+    this->model = orig.model;
+    this->yearMade = orig.yearMade;
+    this->nrOfPassengers = orig.nrOfPassengers;
+}
+
+Vehicle::~Vehicle() { /*std::cout << "Vehicle destructor; " << std::endl;*/ }
+
+bool Vehicle::operator==(const Vehicle& right) {
+    return (this->make == right.make && this->model == right.model);
+}
+
 
 string Vehicle::toString() {
     stringstream ss;

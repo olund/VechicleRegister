@@ -20,6 +20,11 @@ string Boat::toString() {
     return ss.str();
 }
 
+ostream& operator<<(ostream& os, const Boat& b) {
+     os << b.toString();
+     return os;
+}
+
 
 Boat::~Boat() {
     std::cout << "Boat destructor" << endl;
