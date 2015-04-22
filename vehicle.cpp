@@ -35,7 +35,7 @@ bool Vehicle::operator==(const Vehicle& right) {
 }
 
 
-string Vehicle::toString() {
+string Vehicle::toString() const {
     stringstream ss;
     ss << "Make: " << this->make << endl;
     ss << "Model: " << this->model << endl;

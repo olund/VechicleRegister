@@ -6,6 +6,7 @@
 #include "vehicle.h"
 #include "boat.h"
 #include "myvector.h"
+#include "sailboat.h"
 
 using namespace std;
 
@@ -35,12 +36,23 @@ int main(int argc, char *argv[]) {
     intVector.addLast(2);
     intVector.addLast(3);
 
+    MyVector<Vehicle> *vVector = new MyVector<Vehicle>();
+
+    for (int i = 0; i < 10; i++) {
+        //vVector->addLast(SailBoat("a", "a", 1, 1, 1, 1, 1));
+        //vVector->addLast(new Boat(""));
+    }
+
+    vVector->print();
+
     //cout << intVector.toString();
     cout << "-------------------------------" << endl;
-    cout << intVector[0] << endl;
+    /*cout << intVector[0] << endl;
     cout << boatVector[0] << endl;
     boatVector[0] = boatVector[3];
-    cout << boatVector[0] << endl;
+    cout << boatVector[0] << endl;*/
+
+
 
 
 

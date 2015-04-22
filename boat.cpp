@@ -12,8 +12,9 @@ Boat::Boat(string make, string model, int yearMade, int nrOfPassgengers, int wid
 }
 
 
-string Boat::toString() {
+string Boat::toString() const {
     stringstream ss;
+    ss << Vehicle::toString();
     ss << "Width: " << this->width << std::endl;
     ss << "Length: " << this->length << std::endl;
 
@@ -27,6 +28,6 @@ ostream& operator<<(ostream& os, const Boat& b) {
 
 
 Boat::~Boat() {
-    std::cout << "Boat destructor" << endl;
+    /*std::cout << "Boat destructor" << endl;*/
 }
 

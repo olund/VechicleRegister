@@ -16,14 +16,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     vehicle.cpp \
     boat.cpp \
-    motorcycle.cpp
+    motorcycle.cpp \
+    sailboat.cpp
 
 HEADERS  += mainwindow.h \
     vehicle.h \
     boat.h \
     motorcycle.h \
     myvector.h \
-    reader.h
+    reader.h \
+    sailboat.h
 
 FORMS    += mainwindow.ui
 

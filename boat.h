@@ -12,13 +12,9 @@ public:
     ~Boat();
 
 
-    string toString();
+    string toString() const;
 
-    friend ostream& operator<<(ostream& os, const Boat& b) {
-        os << b.getMake() << b.getModel();
-        return os;
-    }
-
+    friend ostream& operator<<(ostream& os, const Boat& b);
 private:
     int width;
     int length;

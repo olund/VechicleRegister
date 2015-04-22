@@ -45,12 +45,12 @@ public:
     }
 
     void addLast(T obj) {
-        this->expandArray();
+        this->expandArray(this->myArr);
         this->myArr[this->size++] = new T(obj);
     }
 
     void addFirst(T obj) {
-        this->expandArray();
+        this->expandArray(this->myArr);
 
         // Copy reference to the first element.
         T temp = *this->myArr[0];
@@ -70,7 +70,7 @@ public:
     }
 
     void print() {
-        for (int i = 0; i < this->size; i++) {
+        for (unsigned int i = 0; i < this->size; i++) {
             cout << "Position in array: " << i << endl;
             cout << this->myArr[i]->toString() << endl;
             cout << endl;
@@ -92,11 +92,24 @@ public:
 
 
 private:
-    void expandArray() {
-        if (this->size >= this->capacity) {
+    void expandArray(T **& myArray) {
+        if(size >= capacity) {
+            T** temp = myArray;
+            capacity += 10; // Should expand it more maybe..
+            myArray = new T*[capacity];
 
+            // copy address
+            for (unsigned int i = 0; i < size; i++) {
+                myArray[i] = temp[i];
+            }
+            // set other elements to nullptr
+            for (unsigned int i = size; i < capacity; i++) {
+                myArray[i] = nullptr;
+            }
+            delete [] temp;
         }
     }
+
 
     T **myArr;
     unsigned int size;

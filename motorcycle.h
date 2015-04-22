@@ -7,7 +7,7 @@ public:
     Motorcycle(string make, string model, int yearMade, int nrOfPassgengers, int horsePower, int cylineVolume);
     ~Motorcycle();
 
-    string toString();
+    string toString() const;
 
 private:
     int horsePower;

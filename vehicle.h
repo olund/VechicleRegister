@@ -23,7 +23,7 @@ public:
 
     bool operator==(const Vehicle& right);
 
-    virtual string toString() = 0;
+    virtual string toString() const = 0;
 
 private:
     string make;
