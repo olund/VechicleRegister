@@ -21,13 +21,30 @@ int main(int argc, char *argv[]) {
     Boat c("c", "b", 1994, 3, 300, 200);
     Boat d("d", "b", 1994, 3, 300, 200);
     Boat e("e", "b", 1994, 3, 300, 200);
+    Boat first("yolo first", "a", 1, 1,1,1);
 
     boatVector.addLast(b);
     boatVector.addLast(c);
     boatVector.addLast(d);
     boatVector.addLast(e);
+    boatVector.addFirst(first);
+    boatVector.addLast(first);
 
-    boatVector.print();
+    MyVector<int> intVector;
+    intVector.addLast(1);
+    intVector.addLast(2);
+    intVector.addLast(3);
+
+    //cout << intVector.toString();
+    cout << "-------------------------------" << endl;
+    cout << intVector[0] << endl;
+    cout << boatVector[0] << endl;
+    boatVector[0] = boatVector[3];
+    cout << boatVector[0] << endl;
+
+
+
+    //boatVector.print();
 /*    delete v;
     delete vector;
 */

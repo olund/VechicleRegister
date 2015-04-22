@@ -20,6 +20,7 @@ string Boat::toString() {
     return ss.str();
 }
 
+
 Boat::~Boat() {
     std::cout << "Boat destructor" << endl;
 }

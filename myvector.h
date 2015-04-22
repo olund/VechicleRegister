@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -17,14 +18,14 @@ public:
         this->myArr = new T*[capacity];
 
         // Set all elements in the array to nullptr;
-        for (int i = 0; i < this->capacity; i++) {
+        for (unsigned int i = 0; i < this->capacity; i++) {
             this->myArr[i] = nullptr;
         }
     }
 
     ~MyVector() {
         // Delete the objects in the array and set the elements to nullptr.
-        for (int i = 0; i < this->capacity; i++) {
+        for (unsigned int i = 0; i < this->capacity; i++) {
             if (this->myArr != nullptr) {
                 delete this->myArr[i];
                 this->myArr[i] = nullptr;
@@ -58,6 +59,16 @@ public:
         this->myArr[this->size++] = new T(temp);
     }
 
+    string toString() const {
+        stringstream ss;
+
+        for (int i = 0; i < this->size; i++) {
+            ss << *this->myArr[i] << endl;
+        }
+
+        return ss.str();
+    }
+
     void print() {
         for (int i = 0; i < this->size; i++) {
             cout << "Position in array: " << i << endl;
@@ -67,6 +78,19 @@ public:
 
     }
 
+    // Operators..
+
+    T& operator[](unsigned int i) {
+        //if (i < size) {
+            return *this->myArr[i];
+        //}
+    }
+
+    const T& operator[](unsigned int i) const {
+        return this->myArr[i];
+    }
+
+
 private:
     void expandArray() {
         if (this->size >= this->capacity) {
@@ -75,8 +99,8 @@ private:
     }
 
     T **myArr;
-    int size;
-    int capacity;
+    unsigned int size;
+    unsigned int capacity;
 };
 
 #endif // MYVECTOR_H

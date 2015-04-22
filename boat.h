@@ -1,6 +1,9 @@
 #ifndef BOAT_H
 #define BOAT_H
+#include <iostream>
 #include "vehicle.h"
+
+using namespace std;
 
 class Boat : public Vehicle
 {
@@ -8,7 +11,13 @@ public:
     Boat(string make, string model, int yearMade, int nrOfPassgengers, int width, int length);
     ~Boat();
 
+
     string toString();
+
+    friend ostream& operator<<(ostream& os, const Boat& b) {
+        os << b.getMake() << b.getModel();
+        return os;
+    }
 
 private:
     int width;
