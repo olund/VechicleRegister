@@ -36,12 +36,60 @@ public:
         this->myArr = nullptr;
     }
 
+
+    /**
+     * @brief binarySearch, notice the array must be sorted.
+     * @param value, the value to search for
+     * @return index
+     */
+    int binarySearch(int value) const {
+        bool found = false;
+
+        int index = -1,
+            first = 0,
+            last = this->size - 1,
+            middle;
+
+        while (first <= last && !found) {
+            middle = (first + last) / 2;
+            if (this->myArr[middle] == value) {
+                found = true;
+                index = middle;
+            } else if (value > arr[middle]) {
+                first = middle + 1;
+            } else {
+                last = middle + 1;
+            }
+        }
+
+        return index;
+    }
+
+    int linearSearch(T* value) {
+        bool found = false;
+        int index = -1;
+
+        for (unsigned int i = 0; i < this->size && !found; i++) {
+            if (this->myArr[i] == value) {
+                found = true;
+                index = i;
+            }
+        }
+        return index;
+    }
+
+
+
     int getSize() {
         return this->size;
     }
 
     int getCapacity() {
         return this->capacity;
+    }
+
+    void add(T *obj) {
+        this->myArr[this->size++] = obj;
     }
 
     void addLast(T obj) {
@@ -62,7 +110,7 @@ public:
     string toString() const {
         stringstream ss;
 
-        for (int i = 0; i < this->size; i++) {
+        for (unsigned int i = 0; i < this->size; i++) {
             ss << *this->myArr[i] << endl;
         }
 

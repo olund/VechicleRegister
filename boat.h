@@ -5,14 +5,18 @@
 
 using namespace std;
 
-class Boat : public Vehicle
-{
+class Boat : public Vehicle {
 public:
     Boat(string make, string model, int yearMade, int nrOfPassgengers, int width, int length);
     ~Boat();
 
+    Boat(const Boat &orig);
+
 
     string toString() const;
+
+    Boat& operator=(const Boat& orig);
+
 
     friend ostream& operator<<(ostream& os, const Boat& b);
 private:

@@ -11,6 +11,11 @@ Boat::Boat(string make, string model, int yearMade, int nrOfPassgengers, int wid
     this->length = length;
 }
 
+Boat::Boat(const Boat &orig) {
+    this->width = orig.width;
+    this->length = orig.length;
+}
+
 
 string Boat::toString() const {
     stringstream ss;
@@ -19,6 +24,13 @@ string Boat::toString() const {
     ss << "Length: " << this->length << std::endl;
 
     return ss.str();
+}
+
+Boat& Boat::operator=(const Boat& orig) {
+    this->width = orig.width;
+    this->length = orig.length;
+
+    return *this;
 }
 
 ostream& operator<<(ostream& os, const Boat& b) {

@@ -34,6 +34,15 @@ bool Vehicle::operator==(const Vehicle& right) {
     return (this->make == right.make && this->model == right.model);
 }
 
+Vehicle& Vehicle::operator=(const Vehicle& orig) {
+    this->make = orig.make;
+    this->model = orig.model;
+    this->yearMade = orig.yearMade;
+    this->nrOfPassengers = orig.nrOfPassengers;
+
+    return *this;
+}
+
 
 string Vehicle::toString() const {
     stringstream ss;
