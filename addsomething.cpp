@@ -6,6 +6,9 @@ AddSomething::AddSomething(QWidget *parent) :
     ui(new Ui::AddSomething)
 {
     ui->setupUi(this);
+
+
+
 }
 
 AddSomething::~AddSomething()

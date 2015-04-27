@@ -19,7 +19,7 @@ SailBoat::~SailBoat()
 string SailBoat::toString() const {
     stringstream ss;
     ss << Boat::toString();
-    ss << "someThingAboutTheSailBoat" << this->someThingAboutTheSailsBoat;
+    ss << this->someThingAboutTheSailsBoat;
     return ss.str();
 }
 

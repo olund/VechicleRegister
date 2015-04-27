@@ -19,9 +19,10 @@ Boat::Boat(const Boat &orig) {
 
 string Boat::toString() const {
     stringstream ss;
+    ss << typeid(*this).name() << endl;
     ss << Vehicle::toString();
-    ss << "Width: " << this->width << std::endl;
-    ss << "Length: " << this->length << std::endl;
+    ss << this->width <<endl;
+    ss << this->length << endl;
 
     return ss.str();
 }

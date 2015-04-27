@@ -70,15 +70,13 @@ public:
         int index = -1;
 
         for (unsigned int i = 0; i < this->size && !found; i++) {
-            if (this->myArr[i] == value) {
+            if (this->myArr[i] == *value) {
                 found = true;
                 index = i;
             }
         }
         return index;
     }
-
-
 
     int getSize() {
         return this->size;
@@ -89,29 +87,15 @@ public:
     }
 
     void add(T *obj) {
+        this->expandArray();
         this->myArr[this->size++] = obj;
-    }
-
-    void addLast(T obj) {
-        this->expandArray(this->myArr);
-        this->myArr[this->size++] = new T(obj);
-    }
-
-    void addFirst(T obj) {
-        this->expandArray(this->myArr);
-
-        // Copy reference to the first element.
-        T temp = *this->myArr[0];
-        delete this->myArr[0];
-        this->myArr[0] = new T(obj);
-        this->myArr[this->size++] = new T(temp);
     }
 
     string toString() const {
         stringstream ss;
 
         for (unsigned int i = 0; i < this->size; i++) {
-            ss << *this->myArr[i] << endl;
+            ss << this->myArr[i]->toString() << endl;
         }
 
         return ss.str();
@@ -123,7 +107,6 @@ public:
             cout << this->myArr[i]->toString() << endl;
             cout << endl;
         }
-
     }
 
     // Operators..
@@ -140,19 +123,19 @@ public:
 
 
 private:
-    void expandArray(T **& myArray) {
+    void expandArray() {
         if(size >= capacity) {
-            T** temp = myArray;
+            T** temp = this->myArr;
             capacity += 10; // Should expand it more maybe..
-            myArray = new T*[capacity];
+            this->myArr = new T*[capacity];
 
             // copy address
             for (unsigned int i = 0; i < size; i++) {
-                myArray[i] = temp[i];
+                 this->myArr[i] = temp[i];
             }
             // set other elements to nullptr
             for (unsigned int i = size; i < capacity; i++) {
-                myArray[i] = nullptr;
+                 this->myArr[i] = nullptr;
             }
             delete [] temp;
         }

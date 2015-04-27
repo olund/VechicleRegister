@@ -18,7 +18,9 @@ SOURCES += main.cpp\
     boat.cpp \
     motorcycle.cpp \
     sailboat.cpp \
-    addsomething.cpp
+    addvehicle.cpp \
+    addsomething.cpp \
+    register.cpp
 
 HEADERS  += mainwindow.h \
     vehicle.h \
@@ -27,10 +29,17 @@ HEADERS  += mainwindow.h \
     myvector.h \
     reader.h \
     sailboat.h \
-    addsomething.h
+    addvehicle.h \
+    addsomething.h \
+    register.h \
+    filehandler.h
 
 FORMS    += mainwindow.ui \
+    addvehicle.ui \
     addsomething.ui
 
 
 QMAKE_CXXFLAGS += -std=c++11
+
+DISTFILES += \
+    New Text Document.txt

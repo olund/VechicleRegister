@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "addsomething.h"
+#include "addvehicle.h"
+#include "register.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,9 +22,15 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_actionSave_to_file_triggered();
+
+    void on_actionLoad_from_file_triggered();
+
 private:
     Ui::MainWindow *ui;
-    AddSomething *addSomethingDialog;
+    AddVehicle *addVehicleWindow;
+    Register vehicleRegister;
+
 };
 
 #endif // MAINWINDOW_H

@@ -31,26 +31,32 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Search</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>204</x>
-      <y>150</y>
-      <width>171</width>
-      <height>61</height>
+      <x>510</x>
+      <y>10</y>
+      <width>151</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Open new window</string>
+     <string>Add Vehicle</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>581</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="modelColumn">
+     <number>0</number>
     </property>
    </widget>
   </widget>
@@ -60,9 +66,18 @@
      <x>0</x>
      <y>0</y>
      <width>863</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionSave_to_file"/>
+    <addaction name="actionLoad_from_file"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -73,6 +88,16 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSave_to_file">
+   <property name="text">
+    <string>Save to file</string>
+   </property>
+  </action>
+  <action name="actionLoad_from_file">
+   <property name="text">
+    <string>Load from file</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -11,14 +11,26 @@ Motorcycle::Motorcycle(string make, string model, int yearMade, int nrOfPassgeng
     this->cylinderVolume = cylinderVolume;
 }
 
+
+bool Motorcycle::operator==(const Motorcycle& right) {
+    return (this->getMake() == right.getMake() && this->getModel() == right.getModel());
+}
+
 string Motorcycle::toString() const {
     stringstream ss;
+    ss << typeid(*this).name() << endl;
     ss << Vehicle::toString();
-    ss << "Horsepower: " << this->horsePower << endl;
-    ss << "Cylinder volume: " << this->cylinderVolume << endl;
+    ss << this->horsePower << endl;
+    ss << this->cylinderVolume << endl;
 
     return ss.str();
 }
+
+/*ostream& operator<<(ostream& os, const Motorcycle& b) {
+     os << b.toString();
+     return os;
+}*/
+
 
 Motorcycle::~Motorcycle() {
 

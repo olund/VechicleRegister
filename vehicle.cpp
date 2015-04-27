@@ -46,10 +46,10 @@ Vehicle& Vehicle::operator=(const Vehicle& orig) {
 
 string Vehicle::toString() const {
     stringstream ss;
-    ss << "Make: " << this->make << endl;
-    ss << "Model: " << this->model << endl;
-    ss << "Year made: " << this->yearMade << endl;
-    ss << "Number of passengers: " << this->nrOfPassengers << endl;
+    ss << this->make << endl;
+    ss << this->model << endl;
+    ss << this->yearMade << endl;
+    ss << this->nrOfPassengers << endl;
 
     return ss.str();
 }

@@ -24,7 +24,6 @@ public:
     bool operator==(const Vehicle& right);
     Vehicle& operator=(const Vehicle& orig);
 
-
     virtual string toString() const = 0;
 
 private:
