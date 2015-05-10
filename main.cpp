@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include <QApplication>
-
 #include <iostream>
 #include <string>
 #include "vehicle.h"

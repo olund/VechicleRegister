@@ -54,6 +54,10 @@ string Vehicle::toString() const {
     return ss.str();
 }
 
+string Vehicle::getType() const {
+    return "vehicle";
+}
+
 
 
 /* GETTERS AND SETTERS */

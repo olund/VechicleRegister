@@ -25,7 +25,7 @@ public:
     Vehicle& operator=(const Vehicle& orig);
 
     virtual string toString() const = 0;
-
+    virtual string getType() const;
 private:
     string make;
     string model;

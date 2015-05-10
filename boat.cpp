@@ -34,13 +34,24 @@ Boat& Boat::operator=(const Boat& orig) {
     return *this;
 }
 
+int Boat::getWidth() const {
+    return this->width;
+}
+
+int Boat::getLength() const {
+    return this->length;
+}
+
 ostream& operator<<(ostream& os, const Boat& b) {
      os << b.toString();
      return os;
+}
+
+string Boat::getType() const {
+    return "boat";
 }
 
 
 Boat::~Boat() {
     /*std::cout << "Boat destructor" << endl;*/
 }
-

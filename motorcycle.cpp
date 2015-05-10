@@ -26,6 +26,17 @@ string Motorcycle::toString() const {
     return ss.str();
 }
 
+int Motorcycle::getHorsePower() const {
+    return this->horsePower;
+}
+int Motorcycle::getCylindervolume() const {
+    return this->cylinderVolume;
+}
+
+string Motorcycle::getType() const {
+    return "motorcycle";
+}
+
 /*ostream& operator<<(ostream& os, const Motorcycle& b) {
      os << b.toString();
      return os;

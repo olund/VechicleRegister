@@ -16,7 +16,10 @@ public:
     string toString() const;
 
     Boat& operator=(const Boat& orig);
+    virtual string getType() const;
 
+    int getWidth() const;
+    int getLength() const;
 
     friend ostream& operator<<(ostream& os, const Boat& b);
 private:

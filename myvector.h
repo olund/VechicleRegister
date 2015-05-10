@@ -36,46 +36,26 @@ public:
         this->myArr = nullptr;
     }
 
+    bool removeAt(unsigned int pos) {
 
-    /**
-     * @brief binarySearch, notice the array must be sorted.
-     * @param value, the value to search for
-     * @return index
-     */
-    int binarySearch(int value) const {
-        bool found = false;
+        if (pos >= this->size)
+            return false;
 
-        int index = -1,
-            first = 0,
-            last = this->size - 1,
-            middle;
+        delete this->myArr[pos];
 
-        while (first <= last && !found) {
-            middle = (first + last) / 2;
-            if (this->myArr[middle] == value) {
-                found = true;
-                index = middle;
-            } else if (value > arr[middle]) {
-                first = middle + 1;
-            } else {
-                last = middle + 1;
-            }
-        }
+        this->myArr[pos] = this->myArr[this->size - 1];
+        this->myArr[this->size - 1] = nullptr;
+        this->size--;
 
-        return index;
+        return true;
     }
 
-    int linearSearch(T* value) {
-        bool found = false;
-        int index = -1;
-
-        for (unsigned int i = 0; i < this->size && !found; i++) {
-            if (this->myArr[i] == *value) {
-                found = true;
-                index = i;
-            }
+    bool clear() {
+        for (unsigned int i = 0; i < this->size; i++) {
+            delete this->myArr[i];
+            this->myArr[i] = nullptr;
+            this->size--;
         }
-        return index;
     }
 
     int getSize() {
@@ -89,6 +69,16 @@ public:
     void add(T *obj) {
         this->expandArray();
         this->myArr[this->size++] = obj;
+    }
+
+    void add(T &elem) {
+        this->expandArray();
+        this->myArr[this->size++] = new T(elem);
+    }
+
+    void update(T *obj, int pos) {
+        delete this->myArr[pos];
+        this->myArr[pos] = obj;
     }
 
     string toString() const {
@@ -112,13 +102,19 @@ public:
     // Operators..
 
     T& operator[](unsigned int i) {
-        //if (i < size) {
-            return *this->myArr[i];
-        //}
+        return *this->myArr[i];
     }
 
     const T& operator[](unsigned int i) const {
         return this->myArr[i];
+    }
+
+    T& elementAt(unsigned int i) const {
+        return *this->myArr[i];
+    }
+
+    T*& getAt(int pos) {
+        return myArr[pos];
     }
 
 

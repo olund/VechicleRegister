@@ -16,9 +16,16 @@ public:
     ~Register();
 
 
+    MyVector<Vehicle>& getVehicles() const;
+    //MyVector<Vehicle>& getVehicles();
+
+    FileHandler<Vehicle>& getFileHandler() const;
+
+    int findVehicle(string el) const;
+
+private:
     MyVector<Vehicle> *vehicles;
     FileHandler<Vehicle> *fileHandler;
-//private:
 
 
 };
